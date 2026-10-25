@@ -1,3 +1,7 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
 MACRO tt_um_sidharthsudhir03_sar_adc
   CLASS BLOCK ;
   FOREIGN tt_um_sidharthsudhir03_sar_adc ;
@@ -427,6 +431,12 @@ MACRO tt_um_sidharthsudhir03_sar_adc
         RECT 12.000 2.000 15.000 323.000 ;
     END
   END VGND
+  OBS
+      LAYER Metal4 ;
+        RECT 238.460 1.000 241.460 20.000 ;
+        RECT 282.140 1.000 285.140 20.000 ;
+        RECT 325.820 1.000 328.820 20.000 ;
+  END
 END tt_um_sidharthsudhir03_sar_adc
 END LIBRARY
 
