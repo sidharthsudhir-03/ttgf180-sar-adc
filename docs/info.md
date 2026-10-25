@@ -1,20 +1,13 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+8-bit SAR ADC with a differential input (VINP on ua[0], VINN on ua[1]).
+The SAR logic performs a binary search using a capacitive DAC and a comparator. Work in progress.
 
 ## How to test
 
-Explain how to use your project
+Apply a differential input on ua[0]/ua[1], pulse START (ui[0]), and read D7..D0 on uo_out
+once BUSY (uio[0]) goes low.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+None.
