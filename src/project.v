@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_example (
+module tt_um_sidharthsudhir03_sar_adc (
     input  wire       VGND,
     input  wire       VDPWR,    // 3.3v core power supply
 //    input  wire       VAPWR,    // second analog power supply (VAA)
