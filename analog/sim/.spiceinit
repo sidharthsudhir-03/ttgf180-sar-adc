@@ -1,0 +1,4 @@
+* ngspice init: read from the directory ngspice is started in
+set ngbehavior=hsa
+set ng_nomodcheck
+set num_threads=4

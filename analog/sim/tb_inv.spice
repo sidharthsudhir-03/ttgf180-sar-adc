@@ -1,0 +1,25 @@
+* tb_inv.spice: GF180 3.3 V inverter sanity check. Run: make sim TB=tb_inv
+* models/ is a symlink to $PDK_ROOT/$PDK/libs.tech/ngspice (created by: make setup)
+* Corners: typical | ff | ss | fs | sf
+
+.include models/design.ngspice
+.lib models/sm141064.ngspice typical
+
+.param vdd=3.3
+Vdd vdd 0 {vdd}
+Vin in  0 PULSE(0 {vdd} 1n 100p 100p 5n 10n)
+
+XMP out in vdd vdd pfet_03v3 W=2u L=0.28u
+XMN out in 0   0   nfet_03v3 W=1u L=0.28u
+Cl  out 0 20f
+
+.control
+  dc Vin 0 3.3 0.01
+  wrdata tb_inv_dc.txt v(out)
+  tran 10p 30n
+  meas tran tpd_hl TRIG v(in) VAL=1.65 RISE=1 TARG v(out) VAL=1.65 FALL=1
+  meas tran tpd_lh TRIG v(in) VAL=1.65 FALL=1 TARG v(out) VAL=1.65 RISE=1
+  write tb_inv.raw
+  quit
+.endc
+.end

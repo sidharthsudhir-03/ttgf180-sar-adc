@@ -1,0 +1,8 @@
+# Project xschemrc: loads the GF180 PDK setup, then adds this project's schematics.
+source $env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/xschemrc
+
+set PROJ_XSCHEM [file normalize [file dirname [info script]]]
+append XSCHEM_LIBRARY_PATH :$PROJ_XSCHEM
+
+# Netlists go to analog/netlist; xschem simulations run there too
+set netlist_dir [file normalize $PROJ_XSCHEM/../netlist]
